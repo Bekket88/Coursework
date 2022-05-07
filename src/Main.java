@@ -9,7 +9,7 @@ public class Main {
         employeeBook.addEmployee(new Employee("Наталья", "Петрова", "Вадимовна", 112000, 4));
         employeeBook.addEmployee(new Employee("Ирина", "Соколова", "Михаиловна", 118720, 1));
         employeeBook.addEmployee(new Employee("Егор", "Попов", "Леонидович", 118720, 1));
-        employeeBook.addEmployee(new Employee("Ксения", "Антонова", "Юрьевна", 118720, 1));
+        employeeBook.addEmployee(new Employee("Ксения", "Антонова", "Юрьевна", 110200, 1));
         employeeBook.addEmployee(new Employee("сотрудник", "это", "на удаление",10,1));
         employeeBook.deleteEmployee("это сотрудник на удаление", 9); // удалить сотрудника
         employeeBook.changeEmployeeSalary("Иванов Дмитрий Сергеевич", 100000); // изменить зарплату сотрудника
@@ -17,16 +17,16 @@ public class Main {
         employeeBook.printAllEmployeeList(); // напечатать всю информацию по всем сотрудникам
         System.out.println();
         System.out.println(employeeBook.countTotalSalary()); // посчитать общую зарплату
-        System.out.println(employeeBook.findMaxSalary()); // найти максимальную зарплату
-        System.out.println(employeeBook.findMinSalary()); // найти минимальную зарплату
+        employeeBook.findMaxSalary();// найти максимальную зарплату
+        employeeBook.findMinSalary(); // найти минимальную зарплату
         System.out.println(employeeBook.countAverageSalary()); // найти среднюю зарплату
         System.out.println();
         employeeBook.printAllFullNames(); // напечатаь все ФИО
         System.out.println();
         employeeBook.indexSalary(1); // проиндексировать заплату всех сотрудникво
         System.out.println();
-        System.out.println(employeeBook.findMaxDepSalary(1)); // найти макисмальную зарплату в отделе
-        System.out.println(employeeBook.findMinDepSalary(1)); // найти минимальную зарплату в отделе
+        employeeBook.findMaxDepSalary(1); // найти макисмальную зарплату в отделе
+        employeeBook.findMinDepSalary(1); // найти минимальную зарплату в отделе
         System.out.println(employeeBook.countTotalDepSalary(1)); // посчитать общую зарплату в отделе
         System.out.println(employeeBook.countAverageDepSalary(1)); // посчиать среднюю зарплату в отделе
         System.out.println();

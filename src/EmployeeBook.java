@@ -65,28 +65,31 @@ public class EmployeeBook {
         }
         return sum;
     }
-    public int findMinSalary() { // найти минимальную зарплату.
-        int minSalary = 1_000_000;
+    public void findMinSalary() { // найти минимальную зарплату.
+        int minSalary = employees[0].getSalary();
+        String worker = "";
         for (Employee employee : employees) {
             if (employee == null) {
                 break;
-            }
-            else if (employee.getSalary() < minSalary) {
+            } else if (employee.getSalary() < minSalary) {
                 minSalary = employee.getSalary();
+                worker = employee.getFullName();
             }
         }
-        return minSalary;
+        System.out.println("Минимальная зарплата: " + worker + " " + minSalary);
     }
-    public int findMaxSalary() { // найти максимальную зарплату.
-        int maxSalary = 0;
+    public void findMaxSalary() { // найти максимальную зарплату.
+        int maxSalary = employees[0].getSalary();
+        String worker = "";
         for (Employee employee : employees) {
             if (employee == null) {
                 break;
             } else if (employee.getSalary() > maxSalary) {
                 maxSalary = employee.getSalary();
+                worker = employee.getFullName();
             }
         }
-        return maxSalary;
+        System.out.println("Максимальная зарплата: " + worker + " " + maxSalary);
     }
     public int countAverageSalary() { // посчитать среднюю зарплату.
         return countTotalSalary() / Employee.getCount();
@@ -109,22 +112,24 @@ public class EmployeeBook {
             }
         }
     }
-    public int findMinDepSalary (int department) { // найти минимальную зарплату в отделе
+    public void findMinDepSalary (int department) { // найти минимальную зарплату в отделе
         int minSalary = 1_000_000;
+        String worker = "";
         for (Employee employee : employees) {
             if (employee == null) {
                 break;
-            }
-            else if (employee.getDepartment() == department) {
+            } else if (employee.getDepartment() == department) {
                 if (employee.getSalary() < minSalary) {
                     minSalary = employee.getSalary();
+                    worker = employee.getFullName();
                 }
             }
         }
-        return minSalary;
+        System.out.println("Минимальная зарплата в отеде: " + worker + " " + minSalary);
     }
-    public int findMaxDepSalary (int department) { // найти максимальную зарплату в отделе
+    public void findMaxDepSalary (int department) { // найти максимальную зарплату в отделе
         int maxSalary = 0;
+        String worker = "";
         for (Employee employee : employees) {
             if (employee == null) {
                 break;
@@ -132,10 +137,11 @@ public class EmployeeBook {
             else if (employee.getDepartment() == department) {
                 if (employee.getSalary() > maxSalary) {
                     maxSalary = employee.getSalary();
+                    worker = employee.getFullName();
                 }
             }
         }
-        return maxSalary;
+        System.out.println("Максимальная зарплата в отделе: " + worker + " " + maxSalary);
     }
     public int countTotalDepSalary(int department) { // посчитать обузую зарплату в отделе
         int sum = 0;
